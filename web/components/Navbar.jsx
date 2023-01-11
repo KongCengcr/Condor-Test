@@ -33,7 +33,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static" style={{ backgroundColor: "#fff" }}>
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
@@ -90,8 +90,8 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                // component={Link}
-                // to={page}
+                component={Link}
+                to={`/${page}`}
                 style={{ textTransform: "none" }}
                 sx={{ my: 2, color: "grey", display: "block" }}
               >
