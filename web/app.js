@@ -1,10 +1,15 @@
 import "./styles.css";
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
 
-export function App() {
+function App() {
   return (
-    <>
-      <Navbar />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
+
+export default App;
