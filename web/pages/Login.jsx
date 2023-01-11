@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import LoginForm from "../components/LoginForm";
-import Navbar from "../components/Navbar";
+import LoginForm from "../components/LoginForm.jsx";
+import Navbar from "../components/Navbar.jsx";
 
 const Container = styled.div`
   width: 100%;
