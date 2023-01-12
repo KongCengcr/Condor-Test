@@ -12,5 +12,40 @@
       "email": "jose@jose.com",
       "password": "jose1234"
     }
+  ],
+  "university": [
+    {
+      "id": 1,
+      "name": "University Oxford",
+      "description": "Oxford is a collegiate University, there are 38 Colleges and 6 Permanent Private Halls. Each is independent and self-governing. Each runs and maintains its own website, each website will look different.",
+      "website": "https://www.ox.ac.uk/",
+      "location": "Oxford OX1 2JD",
+      "country": "United Kingdom",
+      "currency": "EUR €",
+      "language": "English",
+      "population": "513584"
+    },
+    {
+      "id": 2,
+      "name": "University Harvard",
+      "description": "Harvard’s Graduate School of Arts and Sciences has both struggled with inclusion and made monumental strides for equity and opportunity throughout its history.",
+      "website": "https://www.harvard.edu/",
+      "location": "Cambridge, MA",
+      "country": "Unite State",
+      "currency": "USD $",
+      "language": "English",
+      "population": "431545"
+    },
+    {
+      "id": 3,
+      "name": "University Stanford",
+      "description": "Stanford is renowned for the quality of its teaching, its wealth and its proximity to Silicon Valley, home to some of the most important high-tech companies. It is considered one of the top ten universities in the world.",
+      "website": "https://grow.stanford.edu/",
+      "location": "San Francisco",
+      "country": "Unite State",
+      "currency": "USD $",
+      "language": "English",
+      "population": "411545"
+    }
   ]
 }

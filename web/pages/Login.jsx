@@ -17,7 +17,7 @@ import Layout from "./layout/Layout.jsx";
 
 import EastIcon from "@mui/icons-material/East";
 import { validateEmail } from "../utils/validate.js";
-import { getAllUsers } from "../services/userService.js";
+import { getAllUsers } from "../services/mainService.js";
 import { AuthContext } from "../context/AuthContext.js";
 import { useNavigate } from "react-router-dom";
 

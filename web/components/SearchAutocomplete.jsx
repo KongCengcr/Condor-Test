@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { Autocomplete, Button, Grid, TextField } from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
 
-const SearchAutocomplete = () => {
+const SearchAutocomplete = ({ data, valueSearch }) => {
+  const [listUniversities, setListUniversities] = useState(data);
+  const [search, setSearch] = useState("");
+
   const Wrapper = styled.div`
     margin-top: 5rem;
     margin-bottom: 4rem;
@@ -21,7 +24,11 @@ const SearchAutocomplete = () => {
           <Autocomplete
             id="free-solo-demo"
             freeSolo
-            options={top100Films.map((option) => option.title)}
+            options={listUniversities.map((option) => option.name)}
+            defaultValue={!search ? "" : search}
+            onChange={(event, newValue) => {
+              setSearch(newValue);
+            }}
             renderInput={(params) => (
               <TextField
                 style={{ backgroundColor: "#fff" }}
@@ -32,7 +39,11 @@ const SearchAutocomplete = () => {
           />
         </Grid>
         <Grid item xs={12} sm={2} lg={2}>
-          <Button style={{ height: "100%", width: "100%" }} variant="contained">
+          <Button
+            onClick={() => valueSearch(search)}
+            style={{ height: "100%", width: "100%" }}
+            variant="contained"
+          >
             <SearchIcon />
           </Button>
         </Grid>

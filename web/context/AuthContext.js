@@ -19,7 +19,7 @@ export const AuthContextProvider = ({ children }) => {
     // const loggedCurrentUser = {
     //   id: 1,
     //   name: "Kong",
-    //   universityFav: [3, 4, 7],
+    //   universityFav: [1, 3],
     //   universitySelect: 7,
     // }
     localStorage.setItem("loggedUser", JSON.stringify(loggedCurrentUser));
