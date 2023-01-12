@@ -11,8 +11,14 @@ import { yellow, grey } from "@mui/material/colors";
 
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import StarIcon from "@mui/icons-material/Star";
+import StarOutlineIcon from "@mui/icons-material/StarOutline";
 
-const UniversityCard = ({ universityName, country, description }) => {
+const UniversityCard = ({
+  universityName,
+  country,
+  description,
+  isFavority,
+}) => {
   const cardContentStyle = {
     paddingTop: 10,
     paddingBottom: 10,
@@ -29,10 +35,16 @@ const UniversityCard = ({ universityName, country, description }) => {
         style={cardContentStyle}
         action={
           <>
-            <IconButton aria-label="settings">
-              <StarIcon fontSize="small" sx={{ color: yellow[700] }} />
-            </IconButton>
-            <IconButton aria-label="add to favorites">
+            {isFavority ? (
+              <IconButton aria-label="favorite">
+                <StarIcon fontSize="small" sx={{ color: yellow[700] }} />
+              </IconButton>
+            ) : (
+              <IconButton aria-label="favorite">
+                <StarOutlineIcon fontSize="small" sx={{ color: grey[500] }} />
+              </IconButton>
+            )}
+            <IconButton aria-label="open">
               <OpenInNewIcon fontSize="small" sx={{ color: grey[500] }} />
             </IconButton>
           </>

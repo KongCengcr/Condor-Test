@@ -30,6 +30,7 @@ const Profile = () => {
                     description={
                       "This impressive paella is a perfect party dish"
                     }
+                    isFavority={true}
                   />
                   <UniversityCard
                     universityName={"University Name"}
@@ -37,6 +38,7 @@ const Profile = () => {
                     description={
                       "This impressive paella is a perfect party dish"
                     }
+                    isFavority={true}
                   />
                   <UniversityCard
                     universityName={"University Name"}
@@ -44,6 +46,7 @@ const Profile = () => {
                     description={
                       "This impressive paella is a perfect party dish"
                     }
+                    isFavority={true}
                   />
                 </Grid>
               </Grid>

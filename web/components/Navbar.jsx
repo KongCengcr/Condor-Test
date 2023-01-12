@@ -35,9 +35,10 @@ function ResponsiveAppBar() {
     <AppBar position="static" style={{ backgroundColor: "#fff" }}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
-            <Logo src={logo} alt="Logo!" />
+            <Button component={Link} to="/">
+              <Logo src={logo} alt="Logo!" />
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
