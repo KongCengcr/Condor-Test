@@ -26,7 +26,7 @@ const SearchAutocomplete = () => {
               <TextField
                 style={{ backgroundColor: "#fff" }}
                 {...params}
-                label="freeSolo"
+                label="University Name"
               />
             )}
           />

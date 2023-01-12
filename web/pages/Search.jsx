@@ -1,13 +1,12 @@
 import { Container } from "@mui/material";
 import React from "react";
-import Navbar from "../components/Navbar.jsx";
 import SearchAutocomplete from "../components/SearchAutocomplete.jsx";
 import UniversityCard from "../components/UniversityCard.jsx";
+import Layout from "./layout/Layout.jsx";
 
 const Search = () => {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <Container maxWidth="sm">
         <SearchAutocomplete />
         <UniversityCard
@@ -23,7 +22,7 @@ const Search = () => {
           isFavority={false}
         />
       </Container>
-    </>
+    </Layout>
   );
 };
 

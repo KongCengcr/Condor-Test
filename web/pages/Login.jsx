@@ -1,16 +1,15 @@
 import React from "react";
 import ContainerStyled from "../components/Container.jsx";
 import LoginForm from "../components/LoginForm.jsx";
-import Navbar from "../components/Navbar.jsx";
+import Layout from "./layout/Layout.jsx";
 
 const Login = () => {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <ContainerStyled>
         <LoginForm />
       </ContainerStyled>
-    </>
+    </Layout>
   );
 };
 

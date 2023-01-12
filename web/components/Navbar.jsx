@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../logo.png";
 
-const pages = ["Search", "Profile", "Logout"];
+const pages = ["Search", "Profile"];
 
 const Logo = styled.img`
   height: 30px;
@@ -99,6 +99,13 @@ function ResponsiveAppBar() {
                 {page}
               </Button>
             ))}
+            <Button
+              onClick={handleCloseNavMenu}
+              style={{ textTransform: "none" }}
+              sx={{ my: 2, color: "grey", display: "block" }}
+            >
+              Logout
+            </Button>
           </Box>
         </Toolbar>
       </Container>

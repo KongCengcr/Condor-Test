@@ -1,14 +1,13 @@
 import React from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 
-import Navbar from "../components/Navbar.jsx";
 import UniversityCard from "../components/UniversityCard.jsx";
 import UniversityContent from "../components/UniversityContent.jsx";
+import Layout from "./layout/Layout.jsx";
 
 const Profile = () => {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <Container maxWidth="lg">
         <Box sx={{ mt: 8 }}>
           <Grid container spacing={2}>
@@ -83,7 +82,7 @@ const Profile = () => {
           </Grid>
         </Box>
       </Container>
-    </>
+    </Layout>
   );
 };
 
