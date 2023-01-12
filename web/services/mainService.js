@@ -5,3 +5,6 @@ export const getAllUsers = async () =>
 
 export const getAllUniversity = async () =>
   await axios.get("http://localhost:3000/university");
+
+export const getUniversity = async (id) =>
+  await axios.get(`http://localhost:3000/university/${id}`);

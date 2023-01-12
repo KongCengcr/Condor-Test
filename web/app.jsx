@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login.jsx";
 import Profile from "./pages/Profile.jsx";
 import Search from "./pages/Search.jsx";
+import University from "./pages/University.jsx";
 import { AuthContext } from "./context/AuthContext";
 import { useContext } from "react";
 
@@ -46,6 +47,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route exact path="/University/:id" element={<University />} />
         <Route
           exact
           path="/Profile"

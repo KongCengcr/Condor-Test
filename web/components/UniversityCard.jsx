@@ -13,6 +13,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const UniversityCard = ({
   universityId,
@@ -22,6 +23,7 @@ const UniversityCard = ({
   isFavority,
 }) => {
   const { selectFavority } = useContext(AuthContext);
+  const navigate = useNavigate();
   const cardContentStyle = {
     paddingTop: 10,
     paddingBottom: 10,
@@ -34,6 +36,10 @@ const UniversityCard = ({
 
   const handleFavority = () => {
     selectFavority(universityId);
+  };
+
+  const handleNavigate = () => {
+    navigate(`/University/${universityId}`);
   };
 
   return (
@@ -51,7 +57,7 @@ const UniversityCard = ({
                 <StarOutlineIcon fontSize="small" sx={{ color: grey[500] }} />
               </IconButton>
             )}
-            <IconButton aria-label="open">
+            <IconButton onClick={handleNavigate} aria-label="open">
               <OpenInNewIcon fontSize="small" sx={{ color: grey[500] }} />
             </IconButton>
           </>
