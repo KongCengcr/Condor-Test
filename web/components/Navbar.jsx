@@ -9,7 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import logo from "../logo.png";
 
@@ -24,7 +24,10 @@ const Logo = styled.img`
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const { currentUser, logoutUser } = useContext(AuthContext);
+  const location = useLocation();
+  const activePage = location.pathname.split("/")[1];
   const navigate = useNavigate();
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -85,7 +88,10 @@ function ResponsiveAppBar() {
                     component={Link}
                     to={`/${page}`}
                     style={{ textTransform: "none" }}
-                    sx={{ color: "grey", display: "block" }}
+                    sx={{
+                      color: activePage == page ? "primary" : "grey",
+                      display: "block",
+                    }}
                   >
                     {page}
                   </Button>
@@ -110,7 +116,11 @@ function ResponsiveAppBar() {
                 component={Link}
                 to="/Search"
                 style={{ textTransform: "none" }}
-                sx={{ my: 2, color: "grey", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: activePage == "Search" ? "primary" : "grey",
+                  display: "block",
+                }}
               >
                 Search
               </Button>
@@ -120,7 +130,14 @@ function ResponsiveAppBar() {
                 component={Link}
                 to="/Profile"
                 style={{ textTransform: "none" }}
-                sx={{ my: 2, color: "grey", display: "block" }}
+                sx={{
+                  my: 2,
+                  color:
+                    activePage == "Profile" || activePage == ""
+                      ? "primary"
+                      : "grey",
+                  display: "block",
+                }}
               >
                 Profile
               </Button>

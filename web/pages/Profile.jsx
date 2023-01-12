@@ -8,7 +8,6 @@ import { getAllUniversity } from "../services/mainService.js";
 import { AuthContext } from "../context/AuthContext.js";
 
 const Profile = () => {
-  const [universities, setUniversities] = useState("");
   const [listFavorityUniversities, setListFavorityUniversities] = useState("");
   const [university, setUniversity] = useState("");
   const { currentUser } = useContext(AuthContext);
@@ -28,7 +27,6 @@ const Profile = () => {
 
       setUniversity(selectedUniversity);
       setListFavorityUniversities(filterList);
-      setUniversities(resUniversities.data);
     })();
   }, []);
 
