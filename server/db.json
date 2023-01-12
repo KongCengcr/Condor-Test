@@ -4,13 +4,17 @@
       "id": 1,
       "name": "Kong",
       "email": "kong@kong.com",
-      "password": "kong1234"
+      "password": "kong1234",
+      "universityFav": [1, 3],
+      "universitySelect": 3
     },
     {
       "id": 2,
       "name": "Jose",
       "email": "jose@jose.com",
-      "password": "jose1234"
+      "password": "jose1234",
+      "universityFav": [2],
+      "universitySelect": 2
     }
   ],
   "university": [

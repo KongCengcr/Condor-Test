@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Typography,
   IconButton,
@@ -12,13 +12,16 @@ import { yellow, grey } from "@mui/material/colors";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
+import { AuthContext } from "../context/AuthContext";
 
 const UniversityCard = ({
+  universityId,
   universityName,
   country,
   description,
   isFavority,
 }) => {
+  const { selectFavority } = useContext(AuthContext);
   const cardContentStyle = {
     paddingTop: 10,
     paddingBottom: 10,
@@ -29,6 +32,10 @@ const UniversityCard = ({
     mb: 1,
   };
 
+  const handleFavority = () => {
+    selectFavority(universityId);
+  };
+
   return (
     <Card sx={cardStyle}>
       <CardHeader
@@ -36,11 +43,11 @@ const UniversityCard = ({
         action={
           <>
             {isFavority ? (
-              <IconButton aria-label="favorite">
+              <IconButton onClick={handleFavority} aria-label="favorite">
                 <StarIcon fontSize="small" sx={{ color: yellow[700] }} />
               </IconButton>
             ) : (
-              <IconButton aria-label="favorite">
+              <IconButton onClick={handleFavority} aria-label="favorite">
                 <StarOutlineIcon fontSize="small" sx={{ color: grey[500] }} />
               </IconButton>
             )}

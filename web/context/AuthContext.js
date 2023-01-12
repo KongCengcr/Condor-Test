@@ -31,8 +31,39 @@ export const AuthContextProvider = ({ children }) => {
     localStorage.removeItem("loggedUser");
   };
 
+  const selectFavority = (val) => {
+    const { universityFav } = currentUser;
+    if (universityFav.includes(val)) {
+      const deletedFav = universityFav.filter((fav) => fav !== val);
+      setCurrentUser({
+        ...currentUser,
+        universityFav: deletedFav,
+      });
+    } else {
+      setCurrentUser({
+        ...currentUser,
+        universitySelect: val,
+      });
+    }
+  };
+
+  const selectUniversity = (val) => {
+    setCurrentUser({
+      ...currentUser,
+      universityFav: [...universityFav, val],
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ currentUser, loginUser, logoutUser }}>
+    <AuthContext.Provider
+      value={{
+        currentUser,
+        loginUser,
+        logoutUser,
+        selectFavority,
+        selectUniversity,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
