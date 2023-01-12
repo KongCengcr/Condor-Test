@@ -35,22 +35,26 @@ export const AuthContextProvider = ({ children }) => {
     const { universityFav } = currentUser;
     if (universityFav.includes(val)) {
       const deletedFav = universityFav.filter((fav) => fav !== val);
-      setCurrentUser({
+      const fav = {
         ...currentUser,
         universityFav: deletedFav,
-      });
+      };
+      localStorage.setItem("loggedUser", JSON.stringify(fav));
+      setCurrentUser(fav);
     } else {
-      setCurrentUser({
+      const fav = {
         ...currentUser,
-        universitySelect: val,
-      });
+        universityFav: [...universityFav, val],
+      };
+      localStorage.setItem("loggedUser", JSON.stringify(fav));
+      setCurrentUser(fav);
     }
   };
 
   const selectUniversity = (val) => {
     setCurrentUser({
       ...currentUser,
-      universityFav: [...universityFav, val],
+      universitySelect: val,
     });
   };
 
